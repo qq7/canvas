@@ -12,6 +12,7 @@ and on top of that:
 
 - Canvas configurations:
    
+   - test
    - Installed from upstream git repo in /var/www/canvas providing an
      easy upgrade path.
    - Installed Redis Server from Jessie repos.
