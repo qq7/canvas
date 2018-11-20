@@ -5,7 +5,7 @@ source /usr/local/src/canvas.conf
 # preset answers for automated install
 export CANVAS_LMS_ADMIN_EMAIL=$ADMIN_MAIL
 export CANVAS_LMS_ADMIN_PASSWORD=$ADMIN_PASS
-export CANVAS_LMS_ACCOUNT_NAME="TurnKey Canvas"
+export CANVAS_LMS_ACCOUNT_NAME="BIT BCN"
 export CANVAS_LMS_STATS_COLLECTION="opt-out"
 
 # install canvas, populate database and compile assets

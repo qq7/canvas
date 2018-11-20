@@ -31,7 +31,7 @@ production:
   port: "25"
   domain: "$DOMAIN"
   outgoing_address: "$ADMIN_MAIL"
-  default_name: "TurnKey Canvas"
+  default_name: "Canvas"
 EOF
 
 # setup domain config
