@@ -80,7 +80,7 @@ production:
         encryption-secret: "turnkey1"
         signing-secret: "turnkey1"
       rich-content-service:
-        app-host: "canvas-rce-api-host"
+        app-host: "localhost"
 EOF
 
 # copy example configurations
