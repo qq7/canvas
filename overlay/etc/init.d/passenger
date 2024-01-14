@@ -1,0 +1,46 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          passenger in standalone
+# Required-Start:    $network $syslog
+# Should-Start:      $mysql
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# X-Interactive:     true
+# Short-Description: Start/stop rails web site
+### END INIT INFO
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/rbenv/shims/passenger
+
+PASSENGER="/usr/local/rbenv/shims/passenger"
+PORT=443
+ENVIRONMENT="production"
+APP_DIR="/var/www/canvas"
+CMD="bundle exec $PASSENGER start -p $PORT -e $ENVIRONMENT -d --user www-data"
+
+. /lib/lsb/init-functions
+
+case "$1" in
+  start)
+    echo "Starting standalone passenger"
+    cd $APP_DIR
+    $CMD
+    ;;
+  stop)
+    echo "Stopping standalone passenger"
+    cd $APP_DIR
+    $PASSENGER stop -p $PORT
+    ;;
+  restart)
+    echo "Restarting standalone passenger"
+    cd $APP_DIR
+    $PASSENGER stop -p $PORT
+
+    $CMD
+    ;;
+  *)
+    echo "Usage: $0 start|stop" >&2
+    exit 3
+    ;;
+esac
+

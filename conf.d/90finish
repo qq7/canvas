@@ -13,5 +13,8 @@ echo "PassengerStartTimeout 300" >> /etc/apache2/mods-available/passenger.conf
 
 chmod 400 $WEBROOT/config/cache_store.yml
 
+mv /var/www/Passengerfile.canvas.json $WEBROOT/Passengerfile.json
+mv /var/www/Passengerfile.canvas-rce-api.json $WEBROOT/Passengerfile.json
+
 rm -f /usr/local/src/canvas.conf
 
